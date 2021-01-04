@@ -12,8 +12,10 @@
       alert('navigator.mozGetUserMedia', navigator.mozGetUserMedia);
 
       if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
-        alert('获取媒体信息');
-        this.getUserMedia({ video: true, audio: true });
+        alert('获取audio');
+        this.getUserMedia({ video: false, audio: true });
+        alert('获取video');
+        this.getUserMedia({ video: true, audio: false });
       }
     }
 
