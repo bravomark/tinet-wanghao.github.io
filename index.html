@@ -7,33 +7,33 @@
   <script>
     function demo1_video() {
       try {
-        alert('navigator.mediaDevices.getUserMedia：', navigator.mediaDevices.getUserMedia);
-        alert('navigator.getUserMedia：', navigator.getUserMedia);
-        alert('navigator.webkitGetUserMedia：', navigator.webkitGetUserMedia);
-        alert('navigator.mozGetUserMedia：', navigator.mozGetUserMedia);
+        alert('navigator.mediaDevices.getUserMedia：' + navigator.mediaDevices.getUserMedia);
+        alert('navigator.getUserMedia：' + navigator.getUserMedia);
+        alert('navigator.webkitGetUserMedia：' + navigator.webkitGetUserMedia);
+        alert('navigator.mozGetUserMedia：' + navigator.mozGetUserMedia);
 
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
           alert('获取audio');
           this.getUserMedia({ video: false, audio: true });
         }
       } catch (e) {
-        alert('异常', e)
+        alert('异常:' + e)
       }
     }
 
     function demo1_audio() {
       try {
-        alert('navigator.mediaDevices.getUserMedia：', navigator.mediaDevices.getUserMedia);
-        alert('navigator.getUserMedia：', navigator.getUserMedia);
-        alert('navigator.webkitGetUserMedia：', navigator.webkitGetUserMedia);
-        alert('navigator.mozGetUserMedia：', navigator.mozGetUserMedia);
+        alert('navigator.mediaDevices.getUserMedia：' + navigator.mediaDevices.getUserMedia);
+        alert('navigator.getUserMedia：' + navigator.getUserMedia);
+        alert('navigator.webkitGetUserMedia：' + navigator.webkitGetUserMedia);
+        alert('navigator.mozGetUserMedia：' + navigator.mozGetUserMedia);
 
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
           alert('获取video');
           this.getUserMedia({ video: true, audio: false });
         }
       } catch (e) {
-        alert('异常', e)
+        alert('异常' + e)
       }
     }
 
@@ -64,7 +64,7 @@
   </script>
 </head>
 <body>
-  版本：2020/01/04 22:14
+  版本：2020/01/04 22:16
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <button onclick="demo1_audio()">Demo1_Audio</button>
