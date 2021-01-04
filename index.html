@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-    function demo1() {
+    function demo1_video() {
       alert('navigator.mediaDevices.getUserMedia：', navigator.mediaDevices.getUserMedia);
       alert('navigator.getUserMedia：', navigator.getUserMedia);
       alert('navigator.webkitGetUserMedia：', navigator.webkitGetUserMedia);
@@ -14,6 +14,16 @@
       if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
         alert('获取audio');
         this.getUserMedia({ video: false, audio: true });
+      }
+    }
+
+    function demo1_audio() {
+      alert('navigator.mediaDevices.getUserMedia：', navigator.mediaDevices.getUserMedia);
+      alert('navigator.getUserMedia：', navigator.getUserMedia);
+      alert('navigator.webkitGetUserMedia：', navigator.webkitGetUserMedia);
+      alert('navigator.mozGetUserMedia：', navigator.mozGetUserMedia);
+
+      if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
         alert('获取video');
         this.getUserMedia({ video: true, audio: false });
       }
@@ -46,6 +56,7 @@
   </script>
 </head>
 <body>
-  <button onclick="demo1()">Demo1</button>
+  <button onclick="demo1_video()">Demo1_Video</button>
+  <button onclick="demo1_audio()">Demo1_Audio</button>
 </body>
 </html>
