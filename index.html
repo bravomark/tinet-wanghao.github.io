@@ -65,6 +65,17 @@
     function error(error) {
       alert("访问用户媒体设备失败：", error.name, error.message);
     }
+    
+    createA(href) {
+      const eleLink = document.createElement("a")
+      eleLink.style.display = "none"
+      eleLink.href = url
+      // 触发点击
+      document.body.appendChild(eleLink)
+      eleLink.click()
+      // 然后移除
+      document.body.removeChild(eleLink)
+    }
   </script>
 </head>
 <body>
@@ -74,5 +85,7 @@
   <button onclick="demo1_audio()">Demo1_Audio</button>
   <br/>
   <a href="https://codeload.github.com/floadyun/DownloadSpeed/zip/refs/heads/master" target="_blank">测试下载文件</a>
+  <br/>
+  <button onclick="creatA('https://codeload.github.com/floadyun/DownloadSpeed/zip/refs/heads/master')">测试下载文件</button>
 </body>
 </html>
