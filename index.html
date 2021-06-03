@@ -66,7 +66,7 @@
       alert("访问用户媒体设备失败：", error.name, error.message);
     }
     
-    createA(url) {
+    function createA(url) {
       const eleLink = document.createElement("a")
       eleLink.style.display = "none"
       eleLink.href = url
@@ -77,7 +77,7 @@
       document.body.removeChild(eleLink)
     }
     
-    createA2(url) {
+    function createA2(url) {
       const eleLink = document.createElement("a")
       eleLink.style.display = "none"
       eleLink.href = url
@@ -91,7 +91,7 @@
   </script>
 </head>
 <body>
-  版本：2020/06/03 15:46
+  版本：2020/06/03 15:48
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
