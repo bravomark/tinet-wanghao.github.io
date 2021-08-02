@@ -7,25 +7,27 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     window.addEventListener('popstate', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", success:function(result){
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
           alert('popstate')          
       }})
     })
     window.addEventListener('pagehide', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", success:function(result){
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", async: false, success:function(result){
         alert('pagehide')       
       }})
     })
-    window.addEventListener('unload', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload", success:function(result){
+    window.onunload = function(e) {
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload", async: false, success:function(result){
         alert('unload')
       }})
-    })
+    }
+    /*
     window.onbeforeunload = function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", success:function(result){
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", async: false, success:function(result){
         alert('onbeforeunload')
       }})
     }
+    */
     
     function notice() {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/通知", success:function(result){
@@ -119,7 +121,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/02 17:42
+  版本：2020/08/02 17:47
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
