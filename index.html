@@ -6,11 +6,18 @@
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
+    $(window).on('popstate', function () {
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
+          alert('popstate')          
+      }})
+    })
+    /*
     window.addEventListener('popstate', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
           alert('popstate')          
       }})
     })
+    */
     window.addEventListener('pagehide', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", async: false, success:function(result){
         alert('pagehide')       
