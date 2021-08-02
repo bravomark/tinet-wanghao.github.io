@@ -4,18 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
     window.addEventListener('popstate', function(e) => {
-      alert('popstate')
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", success:function(result){
+          alert('popstate')          
+      }})
     })
     window.addEventListener('pagehide', function(e) => {
-      alert('pagehide')
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", success:function(result){
+        alert('pagehide')       
+      }})
     })
     window.addEventListener('unload', function(e) => {
-      alert('unload')
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload", success:function(result){
+        alert('unload')
+      }})
     })
     window.onbeforeunload = function(e) => {
-      alert('onbeforeunload')
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", success:function(result){
+        alert('onbeforeunload')
+      }})
     }
     function demo1_video() {
       try {
@@ -103,7 +112,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/02 15:48
+  版本：2020/08/02 17:39
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
