@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
+    window.addEventListener('popstate', function(e) => {
+      alert('popstate')
+    })
+    window.addEventListener('pagehide', function(e) => {
+      alert('pagehide')
+    })
+    window.addEventListener('unload', function(e) => {
+      alert('unload')
+    })
+    window.onbeforeunload = function(e) => {
+      alert('onbeforeunload')
+    }
     function demo1_video() {
       try {
         alert('navigator：' + navigator);
