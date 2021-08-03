@@ -32,7 +32,7 @@
       let headers = { type: 'application/json' };
       let blob = new Blob([JSON.stringify(body)], headers);
       navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload', blob);
-    }
+    })
     /*
     window.onbeforeunload = function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", async: false, success:function(result){
@@ -133,7 +133,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/03 11:43
+  版本：2020/08/03 11:45
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
