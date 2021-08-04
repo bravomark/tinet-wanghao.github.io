@@ -40,9 +40,9 @@
     if (window.onload) {
       window.onload = () => msg('onload')
     } else if (window.addEventListener) {
-      window.addEventListener('onload', () => msg('onload'))
+      window.addEventListener('load', () => msg('onload'))
     } else if (window.attachEvent) {
-      window.attachEvent('onload', () => msg('onload'))
+      window.attachEvent('load', () => msg('onload'))
     }
     // 注册onunload
     if (window.onunload) {
@@ -183,7 +183,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/04 18:13
+  版本：2020/08/04 18:15
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
