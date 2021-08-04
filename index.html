@@ -6,6 +6,24 @@
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script>
+    Date.prototype.Format = function (fmt) {  
+        var o = {  
+            "M+": this.getMonth() + 1, //月份   
+            "d+": this.getDate(), //日   
+            "H+": this.getHours(), //小时   
+            "m+": this.getMinutes(), //分   
+            "s+": this.getSeconds(), //秒   
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度   
+            "S": this.getMilliseconds() //毫秒   
+        };  
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
+        for (var k in o)  
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
+        return fmt;  
+    }
+  </script>
+  <script>
+    /*
     window.addEventListener('popstate', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
           alert('popstate')          
@@ -15,6 +33,8 @@
       let blob = new Blob([JSON.stringify(body)], headers);
       navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate', blob);
     })
+    */
+    /*
     window.addEventListener('pagehide', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", async: false, success:function(result){
         alert('pagehide')       
@@ -24,6 +44,8 @@
       let blob = new Blob([JSON.stringify(body)], headers);
       navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide', blob);
     })
+    */
+    /*
     window.addEventListener('unload', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload", async: false, success:function(result){
         alert('unload')
@@ -33,6 +55,7 @@
       let blob = new Blob([JSON.stringify(body)], headers);
       navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload', blob);
     })
+    */
     /*
     window.onbeforeunload = function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", async: false, success:function(result){
@@ -41,11 +64,6 @@
     }
     */
     
-    function notice() {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/通知", success:function(result){
-        alert('通知')
-      }})
-    }
     
     function demo1_video() {
       try {
@@ -130,10 +148,29 @@
       // 然后移除
       document.body.removeChild(eleLink)
     }
+    
+    /**
+     * 发送通知
+     */
+    function notice() {
+      let msg = '通知：' + new Date().Format("yyyy-MM-dd")
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/" + msg, success:function(result){
+
+      }})
+    }
+    
+    /**
+     * 定时通知
+     */
+    function timer_notice() {
+      setTimeout(function() {
+        notice()
+      }, 30 * 1000)
+    }
   </script>
 </head>
 <body>
-  版本：2020/08/03 11:45
+  版本：2020/08/04 17:17
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
