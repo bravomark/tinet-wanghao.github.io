@@ -153,7 +153,7 @@
      * 发送通知
      */
     function notice() {
-      let msg = '通知：' + new Date().Format("yyyy-MM-dd")
+      let msg = '通知：' + new Date().Format("yyyy-MM-dd HH:mm:ss")
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/" + msg, success:function(result){
 
       }})
