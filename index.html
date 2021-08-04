@@ -32,8 +32,9 @@
   <script>
     // 通知 
     function msg(msg) {
-      $.ajaxSettings.async = false
-      $.get('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/' + msg)
+      // $.ajaxSettings.async = false
+      // $.get('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/' + msg)
+      navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/' + msg)
     }
 
     // 注册onload
@@ -183,7 +184,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/04 18:15
+  版本：2020/08/04 18:40
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
