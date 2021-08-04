@@ -38,43 +38,43 @@
 
     // 注册onload
     if (window.onload) {
-      window.onload = msg('onload')
+      window.onload = () => msg('onload')
     } else if (window.addEventListener) {
-      window.addEventListener('onload', msg('onload'))
+      window.addEventListener('onload', () => msg('onload'))
     } else if (window.attachEvent) {
-      window.attachEvent('onload', msg('onload'))
+      window.attachEvent('onload', () => msg('onload'))
     }
     // 注册onunload
     if (window.onunload) {
-      window.onunload = msg('onunload')
+      window.onunload = () => msg('onunload')
     } else if (window.addEventListener) {
-      window.addEventListener('unload', msg('onunload'))
+      window.addEventListener('unload', () => msg('onunload'))
     } else if (window.attachEvent) {
-      window.attachEvent('unload', msg('onunload'))
+      window.attachEvent('unload', () => msg('onunload'))
     }
     // 注册onbeforeunload
     if (window.onbeforeunload) {
-      window.onbeforeunload = msg('onbeforeunload')
+      window.onbeforeunload = () => msg('onbeforeunload')
     } else if (window.addEventListener) {
-      window.addEventListener('beforeunload', msg('onbeforeunload'))
+      window.addEventListener('beforeunload', () => msg('onbeforeunload'))
     } else if (window.attachEvent) {
-      window.attachEvent('beforeunload', msg('onbeforeunload'))
+      window.attachEvent('beforeunload', () => msg('onbeforeunload'))
     }
     // 注册onpageshow
     if (window.onpageshow) {
-      window.onpageshow = msg('onpageshow')
+      window.onpageshow = () => msg('onpageshow')
     } else if (window.addEventListener) {
-      window.addEventListener('pageshow', msg('onpageshow'))
+      window.addEventListener('pageshow', () => msg('onpageshow'))
     } else if (window.attachEvent) {
-      window.attachEvent('pageshow', msg('onpageshow'))
+      window.attachEvent('pageshow', () => msg('onpageshow'))
     }
     // 注册onpagehide
     if (window.onpagehide) {
-      window.onpagehide = msg('onpagehide')
+      window.onpagehide = () => msg('onpagehide')
     } else if (window.addEventListener) {
-      window.addEventListener('pagehide', msg('onpagehide'))
+      window.addEventListener('pagehide', () => msg('onpagehide'))
     } else if (window.attachEvent) {
-      window.attachEvent('pagehide', msg('onpagehide'))
+      window.attachEvent('pagehide', () => msg('onpagehide'))
     }
   </script>
   <script>
@@ -183,7 +183,7 @@
   </script>
 </head>
 <body>
-  版本：2020/08/04 18:00
+  版本：2020/08/04 18:13
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
