@@ -30,6 +30,7 @@
     }
   </script>
   <script>
+    
     /*
     window.addEventListener('popstate', function(e) {
       $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
@@ -159,9 +160,8 @@
     /**
      * 发送通知
      */
-    function notice() {
-      let msg = '通知：' + new Date().Format("yyyy-MM-dd HH:mm:ss")
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/" + msg, success:function(result){
+    function notice(msg) {
+      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/" + msg, async: false, success:function(result){
 
       }})
     }
@@ -171,14 +171,29 @@
      */
     function timer_notice() {
       setInterval(function() {
-        notice()
+        notice('通知：' + new Date().Format("yyyy-MM-dd HH:mm:ss"))
       }, 10 * 1000)
     }
-    timer_notice()
+    // timer_notice()
+    
+    window.onload = function() {
+      notice('页面加载完，onload')
+    }
+    
+    window.onbeforeunload = function() {
+      notice('页面卸载前，onbeforeunload')
+    }
+    
+    window.onpageshow = function() {
+      notice('页面显示，onpageshow')
+    }
+    window.onpagehide = function() {
+      notice('页面隐藏，onpagehide')
+    }
   </script>
 </head>
 <body>
-  版本：2020/08/04 17:50
+  版本：2020/08/04 18:00
   <br>
   <button onclick="demo1_video()">Demo1_Video</button>
   <br/>
