@@ -30,49 +30,54 @@
     }
   </script>
   <script>
-    
-    /*
-    window.addEventListener('popstate', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate", async: false, success:function(result){
-          alert('popstate')          
-      }})
-      let body = { id: '2', email: '333' };
-      let headers = { type: 'application/json' };
-      let blob = new Blob([JSON.stringify(body)], headers);
-      navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/popstate', blob);
-    })
-    */
-    /*
-    window.addEventListener('pagehide', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide", async: false, success:function(result){
-        alert('pagehide')       
-      }})
-      let body = { id: '2', email: '333' };
-      let headers = { type: 'application/json' };
-      let blob = new Blob([JSON.stringify(body)], headers);
-      navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/pagehide', blob);
-    })
-    */
-    /*
-    window.addEventListener('unload', function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload", async: false, success:function(result){
-        alert('unload')
-      }})
-      let body = { id: '2', email: '333' };
-      let headers = { type: 'application/json' };
-      let blob = new Blob([JSON.stringify(body)], headers);
-      navigator.sendBeacon('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/unload', blob);
-    })
-    */
-    /*
-    window.onbeforeunload = function(e) {
-      $.ajax({url: "https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/onbeforeunload", async: false, success:function(result){
-        alert('onbeforeunload')
-      }})
+    // 通知 
+    function msg(msg) {
+      $.ajaxSettings.async = false
+      $.get('https://api.day.app/gzwpgQyDXNsfdAQRC7dwh/' + msg)
     }
-    */
-    
-    
+
+    // 注册onload
+    if (window.onload) {
+      window.onload = msg('onload')
+    } else if (window.addEventListener) {
+      window.addEventListener('onload', msg('onload'))
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', msg('onload'))
+    }
+    // 注册onunload
+    if (window.onunload) {
+      window.onunload = msg('onunload')
+    } else if (window.addEventListener) {
+      window.addEventListener('unload', msg('onunload'))
+    } else if (window.attachEvent) {
+      window.attachEvent('unload', msg('onunload'))
+    }
+    // 注册onbeforeunload
+    if (window.onbeforeunload) {
+      window.onbeforeunload = msg('onbeforeunload')
+    } else if (window.addEventListener) {
+      window.addEventListener('beforeunload', msg('onbeforeunload'))
+    } else if (window.attachEvent) {
+      window.attachEvent('beforeunload', msg('onbeforeunload'))
+    }
+    // 注册onpageshow
+    if (window.onpageshow) {
+      window.onpageshow = msg('onpageshow')
+    } else if (window.addEventListener) {
+      window.addEventListener('pageshow', msg('onpageshow'))
+    } else if (window.attachEvent) {
+      window.attachEvent('pageshow', msg('onpageshow'))
+    }
+    // 注册onpagehide
+    if (window.onpagehide) {
+      window.onpagehide = msg('onpagehide')
+    } else if (window.addEventListener) {
+      window.addEventListener('pagehide', msg('onpagehide'))
+    } else if (window.attachEvent) {
+      window.attachEvent('pagehide', msg('onpagehide'))
+    }
+  </script>
+  <script>
     function demo1_video() {
       try {
         alert('navigator：' + navigator);
@@ -175,21 +180,6 @@
       }, 10 * 1000)
     }
     // timer_notice()
-    
-    window.onload = function() {
-      notice('页面加载完，onload')
-    }
-    
-    window.onbeforeunload = function() {
-      notice('页面卸载前，onbeforeunload')
-    }
-    
-    window.onpageshow = function() {
-      notice('页面显示，onpageshow')
-    }
-    window.onpagehide = function() {
-      notice('页面隐藏，onpagehide')
-    }
   </script>
 </head>
 <body>
